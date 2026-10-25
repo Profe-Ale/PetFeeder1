@@ -1,1 +1,249 @@
-*{box-sizing:border-box}:root{--bg:#07111f;--card:#121e30;--line:#2a3850;--text:#fff8f0;--muted:#9da9bc;--orange:#ffad65;--purple:#a68aff;--green:#4bdc9f}body{margin:0;background:radial-gradient(circle at 80% 0,#213251 0,transparent 360px),var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif}body:before{content:"🐾  🐾  🐾";position:fixed;inset:15% -15%;font-size:80px;line-height:3;opacity:.025;transform:rotate(-20deg);pointer-events:none}main{max-width:520px;margin:auto;padding:22px 14px 70px;position:relative}header,.row{display:flex;align-items:center;justify-content:space-between;gap:15px}header h1{margin:2px 0 14px;color:#ffd19a}small,p{color:var(--muted)}.badge{font-size:12px;border:1px solid var(--line);border-radius:20px;padding:8px}.badge.ok{color:var(--green)}.card{background:linear-gradient(145deg,#17243a,#0e1828);border:1px solid var(--line);border-radius:25px;padding:19px;margin:14px 0;box-shadow:0 15px 35px #0005}.hero{min-height:170px;position:relative;overflow:hidden}.big{font-size:55px;font-weight:900;color:#ffc178;margin-top:7px}.pets{position:absolute;right:12px;bottom:8px;font-size:55px}.duration{display:flex;align-items:center;justify-content:space-between;background:#091321;border:1px solid var(--line);border-radius:40px;padding:7px;margin:18px 0}.duration button,.add{border:0;border-radius:50%;width:50px;height:50px;background:#353c5b;color:white;font-size:26px}.add{background:var(--purple);flex:0 0 46px;height:46px}.primary,.secondary{width:100%;border:0;border-radius:30px;padding:16px;font-weight:900}.primary{background:linear-gradient(90deg,#ffc278,#ff9956);color:#29170b}.secondary{background:var(--purple);margin-top:12px}.motor{margin-top:15px}.schedule{display:grid;grid-template-columns:1fr 62px 50px 40px;gap:7px;padding:10px 0;border-top:1px solid var(--line)}.schedule input{min-width:0;width:100%;background:#091321;color:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 5px}.switch{position:relative}.switch input{display:none}.slider{position:absolute;inset:5px 0;background:#3c4657;border-radius:20px}.slider:after{content:"";position:absolute;width:20px;height:20px;left:3px;top:2px;background:#fff;border-radius:50%;transition:.2s}.switch input:checked+.slider{background:var(--green)}.switch input:checked+.slider:after{transform:translateX(20px)}.del{border:1px solid #633947;background:#281923;color:#ff7771;border-radius:9px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid div{background:#091321;border:1px solid var(--line);padding:13px;border-radius:15px}.grid small,.grid b{display:block}.grid b{margin-top:5px;overflow-wrap:anywhere}#toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);background:#26364d;padding:11px 16px;border-radius:13px;opacity:0;transition:.2s;white-space:nowrap;z-index:10}#toast.show{opacity:1}
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #07111f;
+  --card: #121e30;
+  --line: #2a3850;
+  --text: #fff8f0;
+  --muted: #9da9bc;
+  --orange: #ffad65;
+  --purple: #a68aff;
+  --green: #4bdc9f;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at 80% 0, #213251 0, transparent 360px), var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body:before {
+  content: "🐾  🐾  🐾";
+  position: fixed;
+  inset: 15% -15%;
+  font-size: 80px;
+  line-height: 3;
+  opacity: 0.025;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+main {
+  max-width: 520px;
+  margin: auto;
+  padding: 22px 14px 70px;
+  position: relative;
+}
+
+header,
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+header h1 {
+  margin: 2px 0 14px;
+  color: #ffd19a;
+}
+
+small,
+p {
+  color: var(--muted);
+}
+
+.badge {
+  font-size: 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.badge.ok {
+  color: var(--green);
+}
+
+.card {
+  background: linear-gradient(145deg, #17243a, #0e1828);
+  border: 1px solid var(--line);
+  border-radius: 25px;
+  padding: 19px;
+  margin: 14px 0;
+  box-shadow: 0 15px 35px #0005;
+}
+
+.hero {
+  min-height: 170px;
+  position: relative;
+  overflow: hidden;
+}
+
+.big {
+  font-size: 55px;
+  font-weight: 900;
+  color: #ffc178;
+  margin-top: 7px;
+}
+
+.pets {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  font-size: 55px;
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #091321;
+  border: 1px solid var(--line);
+  border-radius: 40px;
+  padding: 7px;
+  margin: 18px 0;
+}
+
+.duration button,
+.add {
+  border: 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #353c5b;
+  color: white;
+  font-size: 26px;
+}
+
+.add {
+  background: var(--purple);
+  flex: 0 0 46px;
+  height: 46px;
+}
+
+.primary,
+.secondary {
+  width: 100%;
+  border: 0;
+  border-radius: 30px;
+  padding: 16px;
+  font-weight: 900;
+}
+
+.primary {
+  background: linear-gradient(90deg, #ffc278, #ff9956);
+  color: #29170b;
+}
+
+.secondary {
+  background: var(--purple);
+  margin-top: 12px;
+}
+
+.motor {
+  margin-top: 15px;
+}
+
+.schedule {
+  display: grid;
+  grid-template-columns: 1fr 62px 50px 40px;
+  gap: 7px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.schedule input {
+  min-width: 0;
+  width: 100%;
+  background: #091321;
+  color: #fff;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 9px 5px;
+}
+
+.switch {
+  position: relative;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 5px 0;
+  background: #3c4657;
+  border-radius: 20px;
+}
+
+.slider:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 3px;
+  top: 2px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+  background: var(--green);
+}
+
+.switch input:checked + .slider:after {
+  transform: translateX(20px);
+}
+
+.del {
+  border: 1px solid #633947;
+  background: #281923;
+  color: #ff7771;
+  border-radius: 9px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.grid div {
+  background: #091321;
+  border: 1px solid var(--line);
+  padding: 13px;
+  border-radius: 15px;
+}
+
+.grid small,
+.grid b {
+  display: block;
+}
+
+.grid b {
+  margin-top: 5px;
+  overflow-wrap: anywhere;
+}
+
+#toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #26364d;
+  padding: 11px 16px;
+  border-radius: 13px;
+  opacity: 0;
+  transition: 0.2s;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+#toast.show {
+  opacity: 1;
+}
