@@ -1,10 +1,94 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Pet Feeder</title><link rel="stylesheet" href="style.css"></head><body><main>
-<header><div><small>SMART PET CARE</small><h1>🐾 Pet Feeder</h1></div><span id="online" class="badge">● Comprobando</span></header>
-<section class="hero card"><div><small>PRÓXIMA COMIDA</small><div id="next" class="big">--:--</div><p id="nextText">Sin horarios activos</p></div><div class="pets">🐶🐱</div></section>
-<section class="card"><h2>Alimentación manual</h2><p>Serví alimento desde cualquier lugar con Internet.</p><div class="duration"><button id="minus">−</button><strong><span id="seconds">3</span> segundos</strong><button id="plus">+</button></div><button class="primary" id="feed">🐾 DAR ALIMENTO AHORA</button><div class="motor">Motor <b id="motor">Detenido</b></div></section>
-<section class="card"><div class="row"><div><h2>Horarios</h2><p>Se sincronizan con la ESP32 y quedan guardados localmente.</p></div><button class="add" id="add">+</button></div><div id="schedules"></div><button class="secondary" id="save">GUARDAR HORARIOS</button></section>
-<section class="card"><h2>Estado</h2><div class="grid"><div><small>DISPOSITIVO</small><b>PF001</b></div><div><small>ÚLTIMA ACCIÓN</small><b id="lastFeed">--</b></div></div></section>
-</main><div id="toast"></div>
-<script type="module" src="app.js"></script></body></html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pet Feeder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <small>SMART PET CARE</small>
+        <h1>🐾 Pet Feeder</h1>
+      </div>
+      <span id="online" class="badge">● Comprobando</span>
+    </header>
+
+    <!-- PRÓXIMA COMIDA -->
+    <section class="hero card">
+      <div>
+        <small>PRÓXIMA COMIDA</small>
+        <div id="next" class="big">--:--</div>
+        <p id="nextText">Sin horarios activos</p>
+      </div>
+      <div class="pets">🐶🐱</div>
+    </section>
+
+    <!-- ALIMENTACIÓN MANUAL (COMIDA) -->
+    <section class="card">
+      <h2>Alimentación manual</h2>
+      <p>Serví alimento desde cualquier lugar con Internet.</p>
+      <div class="duration">
+        <button id="minus">−</button>
+        <strong><span id="seconds">3</span> segundos</strong>
+        <button id="plus">+</button>
+      </div>
+      <button class="primary" id="feed">🐾 DAR ALIMENTO AHORA</button>
+      <div class="motor">Motor <b id="motor">Detenido</b></div>
+    </section>
+
+    <!-- CONTROL Y MONITOREO DE AGUA -->
+    <section class="card">
+      <h2>Control de Agua 💧</h2>
+      <p>Monitoreo de nivel y llenado por electroválvula.</p>
+      <div class="grid">
+        <div>
+          <small>NIVEL DE AGUA</small>
+          <b id="waterLevel">--</b>
+        </div>
+        <div>
+          <small>ELECTROVÁLVULA</small>
+          <b id="valveStatus">Cerrada</b>
+        </div>
+      </div>
+      <button class="primary" id="btnValve" style="margin-top: 15px; background: linear-gradient(90deg, #56b4ff, #387aff); color: white;">
+        ABRIR VÁLVULA (LLENAR)
+      </button>
+    </section>
+
+    <!-- HORARIOS PROGRAMADOS -->
+    <section class="card">
+      <div class="row">
+        <div>
+          <h2>Horarios</h2>
+          <p>Se sincronizan con la ESP32 y quedan guardados localmente.</p>
+        </div>
+        <button class="add" id="add">+</button>
+      </div>
+      <div id="schedules"></div>
+      <button class="secondary" id="save">GUARDAR HORARIOS</button>
+    </section>
+
+    <!-- ESTADO GENERAL -->
+    <section class="card">
+      <h2>Estado</h2>
+      <div class="grid">
+        <div>
+          <small>DISPOSITIVO</small>
+          <b>PF001</b>
+        </div>
+        <div>
+          <small>ÚLTIMA ACCIÓN</small>
+          <b id="lastFeed">--</b>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
